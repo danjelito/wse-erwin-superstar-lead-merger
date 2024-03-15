@@ -33,11 +33,13 @@ if erwin_file is not None and superstar_file is not None:
             num_sheet_erwin = module.get_num_sheets(erwin_file)
             if num_sheet_erwin > 1:
                 st.error("Erwin excel file contains more than one sheet. Please delete other sheets then reupload.")
-
+                st.stop()
             num_sheet_superstar = module.get_num_sheets(superstar_file)
             if num_sheet_superstar > 1:
                 st.error("Superstar excel file contains more than one sheet. Please delete other sheets then reupload.")
+                st.stop()
 
+            # else
             if num_sheet_erwin == 1 and num_sheet_superstar == 1:
 
                 # read df
